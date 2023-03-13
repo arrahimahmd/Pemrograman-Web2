@@ -1,4 +1,21 @@
-<?php require_once "proses_registrasi.php"; ?>
+<?php
+$domisili = ["Jakarta", "Bogor", "Depok", "Bekasi", "Tangerang"];
+
+$program_studi = [
+    "SI"=>"Sistem Informasi",
+    "TI"=>"Teknik Informatika",
+    "BD"=>"Bisnis Digital"
+];
+
+$skills = [
+    "HTML"=>10,
+    "CSS"=>10,
+    "JavaScript"=>20,
+    "PHP"=>30,
+    "Python"=>30,
+];
+?>
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,14 +99,14 @@
         </div>
         </form>
         <table class="table table-bordered">
-            <tr class="table-success text-uppercase">
+            <tr class="table-primary text-uppercase">
                 <th>nim</th>
                 <th>nama</th>
                 <th>email</th>
                 <th>jenis kelamin</th>
                 <th>domisili</th>
                 <th>program studi</th>
-                <th>skills</th>\
+                <th>skills</th>
                 <th>skor</th>
                 <th>predikat</th>
             </tr>
