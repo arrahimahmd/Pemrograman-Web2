@@ -1,33 +1,9 @@
 <?php
-$domisili = ["Jakarta", "Bogor", "Depok", "Bekasi", "Tangerang"];
-
-$program_studi = [
-    "SI"=>"Sistem Informasi",
-    "TI"=>"Teknik Informatika",
-    "BD"=>"Bisnis Digital"
-];
-
-$skills = [
-    "HTML"=>10,
-    "CSS"=>10,
-    "JavaScript"=>20,
-    "PHP"=>30,
-    "Python"=>30,
-];
+require_once "layouts/header.php";
+require_once "layouts/menu.php";
+require_once "../../Praktikum3/proses_registrasi.php"
 ?>
-<?php ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Registrasi</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div class="container">
+<div class="container">
         <h2>Form Registrasi IT Club GDSC</h2>
         <form method="POST">
         <div class="form-group row">
@@ -99,7 +75,7 @@ $skills = [
         </div>
         </form>
         <table class="table table-bordered">
-            <tr class="table-primary text-uppercase">
+            <tr class="table-success text-uppercase">
                 <th>nim</th>
                 <th>nama</th>
                 <th>email</th>
@@ -145,6 +121,8 @@ $skills = [
                             $skor = $skor + 30;
                         }elseif($skills == 'Python') {
                             $skor = $skor + 30;
+                        }elseif($skills == 'Java') {
+                            $skor = $skor + 50;
                         }else{
                             $skor = $skor + 0;
                         }
@@ -171,5 +149,4 @@ $skills = [
             </tr>
         </table>
     </div>
-</body>
-</html>
+<?php require_once "layouts/footer.php";?>

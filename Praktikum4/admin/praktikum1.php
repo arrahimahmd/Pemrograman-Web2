@@ -1,4 +1,8 @@
 <?php
+require_once "layouts/header.php";
+require_once "layouts/menu.php";
+?>
+<?php
 $mahasiswa1 = [
     'id'=>'1',
     'NIM'=>1101220,
@@ -21,20 +25,10 @@ $mahasiswa3 = [
     'TUGAS'=>80,
 ];
 
+
 $ar_nilai = [$mahasiswa1, $mahasiswa2, $mahasiswa3];
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 1</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
+<div class="container">
         <h2>Data Mahasiswa</h2>
         <table class="table table-hover">
             <tr>
@@ -55,5 +49,4 @@ $ar_nilai = [$mahasiswa1, $mahasiswa2, $mahasiswa3];
             <?php } ?>
         </table>
     </div>
-</body>
-</html>
+<?php require_once "layouts/footer.php";?>
