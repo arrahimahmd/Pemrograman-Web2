@@ -28,4 +28,4 @@ require_once '../dbkoneksi.php';
    }
 
    header('location:list_vendor.php');
-?>
+?> 
