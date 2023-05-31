@@ -5,14 +5,20 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BukuController extends Controller
+//import model book
+use App\Models\Book;
+
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.buku');
+        $books = Book::all();
+        return view('admin.book.index', [
+            'books'=> $books
+        ]);
     }
 
     /**

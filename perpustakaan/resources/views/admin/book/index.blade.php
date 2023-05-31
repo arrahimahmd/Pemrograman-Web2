@@ -35,16 +35,20 @@
                               </tr>
                           </thead>
                           <tbody>
+                              @foreach ($books as $book )
+                                  
+                              
                                   <tr>
-                                      <td>1</td>
-                                      <td>Mariposa</td>
-                                      <td>10</td>
+                                      <td>{{$loop->iteration}}</td>
+                                      <td>{{$book->title}}</td>
+                                      <td>{{$book->stok}}</td>
                                       <td>
               <a class="btn btn-primary" href="#">View</a>
               <a class="btn btn-warning" href="#">Edit</a>
               <a class="btn btn-danger" href="#">Delete</a>
               </td>
             </tr>
+            @endforeach
                           </tbody>
                       </table>
             </div>
