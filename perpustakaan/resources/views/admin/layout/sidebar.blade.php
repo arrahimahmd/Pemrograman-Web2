@@ -33,7 +33,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/dashboard/member')}}">
                 <span class="menu-title">Anggota</span>
-                <i class="mdi mdi-book menu-icon"></i>
+                <i class="mdi mdi-account-multiple menu-icon"></i>
               </a>
             </li>
           </ul>

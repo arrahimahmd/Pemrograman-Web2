@@ -4,7 +4,7 @@
     <div class="page-header">
       <h3 class="page-title">
         <span class="page-title-icon bg-gradient-primary text-white me-2">
-          <i class="mdi mdi-book"></i>
+          <i class="mdi mdi-account-multiple"></i>
         </span> Anggota Perpustakaan
       </h3>
       <nav aria-label="breadcrumb">
@@ -15,7 +15,7 @@
         </ul>
       </nav>
     </div>
-    <a class="btn bg-gradient-primary text-white me-2" role="button" style="width : 250px;">+ Tambah Anggota</a>
+    <a href="{{ url('/dashboard/member/create') }}" class="btn btn-primary">+ Tambah Anggota</a>
     <div class="row">
       <div class="col-12 grid-margin">
         <div class="card">
@@ -49,9 +49,13 @@
                                       <td>{{$member->status}}</td>
                                       <td>{{$member->address}}</td>
                                       <td>
-              <a class="btn btn-primary" href="#">View</a>
-              <a class="btn btn-warning" href="#">Edit</a>
-              <a class="btn btn-danger" href="#">Delete</a>
+              <a href="#" class="btn btn-primary">View</a>
+              <a href="#" class="btn btn-warning">Edit</a>
+              <form action="{{ url('/dashboard/member/destroy', $member->id ) }}" method="post" class="d-inline">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-danger" onclick="if(!confirm('Anda Yakin Hapus Data Member?')) {return false}">Delete</button>
+              </form>
               </td>
             </tr>
             @endforeach

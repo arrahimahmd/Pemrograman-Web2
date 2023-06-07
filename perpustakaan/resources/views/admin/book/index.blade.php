@@ -15,7 +15,7 @@
         </ul>
       </nav>
     </div>
-    <a class="btn bg-gradient-primary text-white me-2" role="button" style="width : 200px;">+ Tambah Buku</a>
+    <a href="{{ url('/dashboard/book/create') }}" class="btn btn-primary">+ Tambah Buku</a>
     <div class="row">
       <div class="col-12 grid-margin">
         <div class="card">
@@ -43,9 +43,13 @@
                                       <td>{{$book->title}}</td>
                                       <td>{{$book->stok}}</td>
                                       <td>
-              <a class="btn btn-primary" href="#">View</a>
-              <a class="btn btn-warning" href="#">Edit</a>
-              <a class="btn btn-danger" href="#">Delete</a>
+              <a href="#" class="btn btn-primary">View</a>
+              <a href="#" class="btn btn-warning">Edit</a>
+              <form action="{{ url('/dashboard/book/destroy', $book->id ) }}" method="post" class="d-inline">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-danger" onclick="if(!confirm('Anda Yakin Hapus Data Buku?')) {return false}">Delete</button>
+              </form>
               </td>
             </tr>
             @endforeach
