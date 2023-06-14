@@ -33,29 +33,23 @@
                       <table class="table table-hover table-bordered" width="100%" border="1" cellspacing="2" cellpadding="2">
                           <thead>
                               <tr class="table-info text-uppercase">
-                                  <th>No</th>
+                                  <th>Id</th>
                                   <th>Judul</th>
                                   <th>Jumlah Tersedia</th>
-                                  <th>Action</th>
+                                  <th>No ISBN</th>
+                                  <th>Data Dibuat</th>
                               </tr>
                           </thead>
                           <tbody>
-                              @foreach ($books as $book )       
                                   <tr>
-                                      <td>{{$loop->iteration}}</td>
+                                      <td>{{$book->id}}</td>
                                       <td>{{$book->title}}</td>
                                       <td>{{$book->stok}}</td>
+                                      <td>{{$book->isbn}}</td>
+                                      <td>{{$book->created_at}}</td>
                                       <td>
-              <a href="{{ url('/dashboard/book/show', $book->id ) }}" class="btn btn-primary">View</a>
-              <a href="{{ url('/dashboard/book/edit', $book->id ) }}" class="btn btn-warning">Edit</a>
-              <form action="{{ url('/dashboard/book/destroy', $book->id ) }}" method="post" class="d-inline">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-danger" onclick="if(!confirm('Anda Yakin Hapus Data Buku?')) {return false}">Delete</button>
-              </form>
               </td>
             </tr>
-            @endforeach
                           </tbody>
                       </table>
             </div>

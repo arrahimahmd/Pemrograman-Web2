@@ -60,3 +60,8 @@ Route::delete('/dashboard/book/destroy/{id}', [BookController::class, 'destroy']
 Route::get('/dashboard/member/create', [MemberController::class, 'create']);
 Route::post('/dashboard/member/store', [MemberController::class, 'store']);
 Route::delete('/dashboard/member/destroy/{id}', [MemberController::class, 'destroy']);
+
+//Praktikum 13 - Edit & Detail
+Route::get('/dashboard/book/edit/{id}', [BookController::class, 'edit']);
+Route::put('/dashboard/book/update/{id}', [BookController::class, 'update']);
+Route::get('/dashboard/book/show/{id}', [BookController::class, 'show']);
