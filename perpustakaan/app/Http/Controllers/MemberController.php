@@ -51,7 +51,11 @@ class MemberController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // Mencari data berdasarkan ID
+        $member =  Member::find($id);
+        return view('admin.member.show', [
+            'member' => $member
+        ]);
     }
 
     /**
@@ -59,7 +63,11 @@ class MemberController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // Mencari data berdasarkan ID
+        $member =  Member::find($id);
+        return view('admin.member.edit', [
+            'member' => $member
+        ]);
     }
 
     /**
@@ -67,7 +75,22 @@ class MemberController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // Mencari data berdasarkan ID
+        $member =  Member::find($id);
+
+        // Validasi Form input
+        $validated = $request->validate([
+            'name' => 'required|min:5|max:20',
+            'email' => 'required',
+            'gender' => 'required|in:Pria,Wanita',
+            'status' => 'required',
+            'address' => 'required'
+        ]);
+
+        // Update Data
+        $member->update($validated);
+
+        return redirect('/dashboard/member')->with('success', 'Data Berhasil di Update');
     }
 
     /**

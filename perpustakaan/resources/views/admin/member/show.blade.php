@@ -39,30 +39,23 @@
                                   <th>Jenis Kelamin</th>
                                   <th>Status</th>
                                   <th>Alamat</th>
-                                  <th>Action</th>
+                                  <th>Dibuat</th>
+                                  <th>Diperbarui</th>
                               </tr>
                           </thead>
                           <tbody>
-                              @foreach ($members as $member )
-
                                   <tr>
-                                      <td>{{$loop->iteration}}</td>
+                                      <td>{{$member->id}}</td>
                                       <td>{{$member->name}}</td>
                                       <td>{{$member->email}}</td>
                                       <td>{{$member->gender}}</td>
                                       <td>{{$member->status}}</td>
                                       <td>{{$member->address}}</td>
+                                      <td>{{$member->created_at}}</td>
+                                      <td>{{$member->updated_at}}</td>
                                       <td>
-              <a href="{{ url('/dashboard/member/show', $member->id ) }}" class="btn btn-primary">View</a>
-              <a href="{{ url('/dashboard/member/edit', $member->id ) }}" class="btn btn-warning">Edit</a>
-              <form action="{{ url('/dashboard/member/destroy', $member->id ) }}" method="post" class="d-inline">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-danger" onclick="if(!confirm('Anda Yakin Hapus Data Member?')) {return false}">Delete</button>
-              </form>
               </td>
             </tr>
-            @endforeach
                           </tbody>
                       </table>
             </div>
